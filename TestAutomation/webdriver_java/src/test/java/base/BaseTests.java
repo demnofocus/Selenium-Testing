@@ -7,6 +7,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseTests {
     private WebDriver driver;
     protected HomePage homePage;
@@ -53,6 +55,10 @@ public class BaseTests {
         System.setProperty("webdriver.chrome.driver",
                 "resources/chromeDriver.exe");
         driver = new ChromeDriver();
+        //waits 30 seconds to find element.
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+
         //launch web app
         goHome();
 
